@@ -1,22 +1,28 @@
+using Microsoft.EntityFrameworkCore;
+using ECommerce.Domain;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// DbContext 
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// GELÝÞTÝRME KONTROLÜNÜ KALDIR - HER ZAMAN AÇIK OLSUN
-app.UseSwagger();
-app.UseSwaggerUI(options =>
+//pipeline
+if (app.Environment.IsDevelopment())
 {
-    options.SwaggerEndpoint("/swagger/v1/swagger.json", "ECommerce API v1");
-    options.RoutePrefix = "swagger"; // http://localhost:5050/swagger
-    // Veya ana sayfada: options.RoutePrefix = string.Empty;
-});
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
-// HTTPS yönlendirmesini geçici olarak KAPAT
-// app.UseHttpsRedirection();
-
+app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+
 app.Run();
