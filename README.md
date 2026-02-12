@@ -1,4 +1,4 @@
-
+E-Commerce Unit Testing Project
 📖 About The Project
 This project demonstrates comprehensive unit testing practices in .NET using xUnit and Moq frameworks. Built around an e-commerce domain, it showcases how to properly test repository patterns, CRUD operations, and business logic with Entity Framework Core integration.
 🎯 Learning Objectives
@@ -177,3 +177,5 @@ GitHub: @yilmazfatmanur
 
 ⭐ Show your support
 Give a ⭐️ if this project helped you learn unit testing!
+
+PS: This project is created for educational purposes to demonstrate unit testing concepts in .NET.
