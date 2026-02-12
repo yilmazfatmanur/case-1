@@ -1,8 +1,4 @@
-Projenizi inceledim. E-commerce projesi için güzel bir başlangıç yapmışsınız! Şimdi projenize özel, profesyonel bir İngilizce README hazırlayalım:
-E-Commerce Unit Testing Project
-Show Image
-Show Image
-Show Image
+
 📖 About The Project
 This project demonstrates comprehensive unit testing practices in .NET using xUnit and Moq frameworks. Built around an e-commerce domain, it showcases how to properly test repository patterns, CRUD operations, and business logic with Entity Framework Core integration.
 🎯 Learning Objectives
